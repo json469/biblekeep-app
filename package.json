@@ -2,7 +2,7 @@
   "name": "githubpages-biblekeep-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://json469.github.io/githubpages-biblekeep-app",
+  "homepage": "https://json469.github.io/biblekeep-app",
   "dependencies": {
     "@material-ui/core": "^3.5.1",
     "@types/react-router-dom": "^4.3.1",
