@@ -19,7 +19,7 @@ class App extends React.Component {
 
     await verses.forEach( async verse => {
 
-      const request = 'https://api.esv.org/v3/passage/text/?q=' + verse + '&include-verse-numbers=false&include-footnotes=false&include-headings=false&include-short-copyright=false&include-passage-references=false&indent-poetry=false';
+      const request = `https://api.esv.org/v3/passage/text/?q=${verse}&include-verse-numbers=false&include-footnotes=false&include-headings=false&include-short-copyright=false&include-passage-references=false&indent-poetry=false`;
       const config = {headers : {Authorization : '145dd9bb843cbbb7139f1bd00ee2d16cc151fe54'}}
 
       Axios.get(request, config)
