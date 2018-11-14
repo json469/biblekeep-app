@@ -1,9 +1,8 @@
 import * as React from 'react';
+import '../App.css';
 
 import {AppBar, Button, Toolbar, Typography} from '@material-ui/core/';
 import {Link} from 'react-router-dom';
-
-import '../App.css';
 
 export const NavBar: React.StatelessComponent<{}> = () => {
 
