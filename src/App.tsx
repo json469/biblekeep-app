@@ -2,6 +2,7 @@ import * as React from 'react';
 import Axios from 'axios'
 
 import Notes from './components/Notes'
+import Search from './components/Search'
 
 import './App.css';
 
@@ -34,9 +35,17 @@ class App extends React.Component {
     });
   }
 
+  public getVerse = (e:any) => {
+
+    e.preventDefault();
+
+    // const verse = e.target.elements.verse.value;
+  }
+
   public render() {
     return (
       <div>
+        <Search getVerse={this.getVerse} />
         <Notes notes={this.state.notes} loaded={this.state.loaded} />
       </div>
     );
