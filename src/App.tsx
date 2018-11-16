@@ -11,14 +11,13 @@ class App extends React.Component {
   public state = {
 
     loaded: false,
+    verses: ['heb 4:14-16', 'Phil 4:4-7', 'Psalm 31:7-10'],
     notes: []
   }
 
   public async componentDidMount() {
 
-    const verses = ['heb 4:14-16', 'Phil 4:4-7', 'Psalm 31:7-10'];
-
-    await verses.forEach( async verse => {
+    await this.state.verses.forEach( async verse => {
 
       const request = `https://api.esv.org/v3/passage/text/?q=${verse}&include-verse-numbers=false&include-footnotes=false&include-headings=false&include-short-copyright=false&include-passage-references=false&indent-poetry=false`;
       const config = {headers : {Authorization : '145dd9bb843cbbb7139f1bd00ee2d16cc151fe54'}}
@@ -39,7 +38,11 @@ class App extends React.Component {
 
     e.preventDefault();
 
-    // const verse = e.target.elements.verse.value;
+    const verse = e.target.elements.verse.value;
+
+    this.setState({
+      verses: this.state.verses.concat(verse)
+    })
   }
 
   public render() {
