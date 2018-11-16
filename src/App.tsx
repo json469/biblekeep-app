@@ -24,10 +24,8 @@ class App extends React.Component {
 
       Axios.get(request, config)
         .then(res => {
-          const note = res.data;
-          const joined = this.state.notes.concat(note);   // Could not yet find a clean way to add object to a state array, so just joined them before and updated it to the new one
           this.setState({
-            notes: joined,
+            notes: this.state.notes.concat(res.data),
             loaded : true
           })
         });
