@@ -6,13 +6,26 @@ import Search from './components/Search'
 
 import './App.css';
 
-class App extends React.Component {
+interface IState {
 
-  public state = {
+  loaded: boolean,
+  verses: string[],
+  notes: string[]
+}
 
-    loaded: false,
-    verses: ['heb 4:14-16', 'Phil 4:4-7', 'Psalm 31:7-10'],
-    notes: []
+class App extends React.Component<{}, IState> {
+
+  constructor(props:any) {
+
+    super(props)
+    this.state = {
+      loaded: false,
+      verses: ['heb 4:14-16', 'Phil 4:4-7', 'Psalm 31:7-10'],
+      notes: []
+    }
+
+    this.fetchVerses()
+    this.fetchVerses = this.fetchVerses.bind(this)
   }
 
   public async componentDidMount() {
@@ -50,6 +63,11 @@ class App extends React.Component {
         <Notes notes={this.state.notes} loaded={this.state.loaded} />
       </div>
     );
+  }
+
+  private fetchVerses() {
+
+    console.log('fetchVerse()')
   }
 }
 
