@@ -24,7 +24,7 @@ class App extends React.Component {
   }
 
   public state = {
-    verses: ['1 Tim 2:12', 'Exo 22:18', '1 Peter 2:18'],
+    verses: ['1 Tim 2:12', 'Exo 22:18', '1 Peter 2:18', 'Rev 13'],
     loaded: false,
     notes: []
   }
