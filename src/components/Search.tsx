@@ -9,15 +9,26 @@ export interface IProps {
 
 class Search extends React.Component<IProps> {
 
-    public render() {
-        
-        return (
+    public state = {
+        searchText: ""
+    }
 
+    // controlled input
+    public handleSearchTextChange = (e: any) => this.setState({searchText: e.target.value})
+
+    public handleSubmit = (e: any) => {
+        e.preventDefault();
+        this.props.getVerse(this.state.searchText);
+        this.setState({searchText: ""});
+    }
+
+    public render() {
+        return (
             <div id="search-div">
-                <form onSubmit={this.props.getVerse}>
+                <form onSubmit={this.handleSubmit}>
                 <div>
-                    <input type="text" name="verse" placeholder="Search a verse"/>
-                    <button>Go</button>
+                    <input onChange={this.handleSearchTextChange} value={this.state.searchText} placeholder="Search a verse"/>
+                    <input type="submit" value="Go" />
                 </div>
                 </form>
             </div>

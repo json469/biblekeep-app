@@ -49,18 +49,3 @@ div#nav-bar {
   margin-right: 1em;
   margin-top: 1em;
 }
-
-div#note {
-  background:#fccde7;
-  margin: 1em;
-  padding: 1em;
-  border-radius: 10px;
-  box-shadow: 1px 1px 0 lightgrey;
-}
-
-div#loading-div {
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%)
-}

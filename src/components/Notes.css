@@ -1,0 +1,11 @@
+.note {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 lightgrey;
+}
+
+.loading-div {
+    text-align: center;
+    padding: 1em;
+}
